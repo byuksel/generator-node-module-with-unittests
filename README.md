@@ -36,14 +36,14 @@ For an in-depth explanation of what this generator creates, refer to the HOW_TO_
 
 ## Questions that the generator asks ##
 
-* ** 'What is your module\'s name ?': ** sets 'generatorModuleName'
-* ** 'What is your module\'s dasherized name ? Will use this as the main module name': ** sets 'generatorModuleNameWithDashes'
-* ** 'What is your module\'s main exported class ?': ** sets 'generatorModuleClass'.
-* ** 'What is your module\'s description ?': ** sets 'generatorModuleDescription'.
-* ** 'What is your email ?': ** sets 'generatorUserEmail'.
-* ** 'What is your name ?': ** sets 'generatorUserName'.
-* ** 'What is your github username ?': ** sets 'generatorUserGithubName'.
-* ** 'What is your module\'s own website ?': ** sets 'generatorModuleWebsite'.
+* **'What is your module's name ?':** sets 'generatorModuleName'
+* **'What is your module's dasherized name ? Will use this as the main module name':** sets 'generatorModuleNameWithDashes'
+* **'What is your module's main exported class ?':** sets 'generatorModuleClass'.
+* **'What is your module's description ?':** sets 'generatorModuleDescription'.
+* **'What is your email ?':** sets 'generatorUserEmail'.
+* **'What is your name ?':** sets 'generatorUserName'.
+* **'What is your github username ?':** sets 'generatorUserGithubName'.
+* **'What is your module's own website ?':** sets 'generatorModuleWebsite'.
 
 # Bugs, Requests and Support #
 
