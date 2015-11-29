@@ -47,5 +47,4 @@ For an in-depth explanation of what this generator creates, refer to the HOW_TO_
 
 # Bugs, Requests and Support #
 
-For bug reports, feature requests and general questions, please feel free to email baris@onehundredyearsofcode.com\
-.
+For bug reports, feature requests and general questions, please feel free to email baris@onehundredyearsofcode.com
