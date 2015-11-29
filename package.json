@@ -1,7 +1,7 @@
 {
   "name": "generator-node-module-with-unittests",
   "version": "0.0.1",
-  "description": "Generator for a generic node module with unittests and coverage reports",
+  "description": "Yeoman generator for a generic node module with unittests and coverage reports",
   "files": [
     "app"
   ],
