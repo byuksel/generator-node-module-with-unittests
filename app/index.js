@@ -27,26 +27,6 @@ exports = module.exports = generators.Base.extend({
       message: 'What is your module\'s name ?',
       default : this.determineAppname(),
       desc: 'Name of your module. We will create an app with this name in current directory'
-    },{
-      name: 'generatorModuleDescription',
-      message: 'What is your module\'s description ?',
-      default : this.determineAppname(),
-      desc: 'Description of your module.'
-    },{
-      name: 'generatorUserEmail',
-      message: 'What is your email ?',
-      default : this.user.git.email(),
-      desc: 'Your email, does into package.json'
-    },{
-      name: 'generatorUserName',
-      message: 'What is your name ?',
-      default : this.user.git.name(),
-      desc: 'Your name, does into package.json'
-    },{
-      name: 'generatorUserGithubName',
-      message: 'What is your github username ?',
-      default : this.user.git.email().split('@')[0],
-      desc: 'Your github account name, does into package.json'
     }];
 
     this.prompt(prompts, function (answers) {
@@ -54,21 +34,51 @@ exports = module.exports = generators.Base.extend({
       done();
     }.bind(this));
   },
-  cleanUpAnswers: function() {
+  deriveAnswers: function() {
     this.answers['generatorModuleClass'] = us.classify(this.answers['generatorModuleName']);
     this.answers['generatorModuleNameWithDashes'] = us(
       this.answers['generatorModuleName']).decapitalize().dasherize().value();
-    this.answers['generatorUserName'] = us.titleize(this.answers['generatorUserName']);
+
   },
   askModuleWebsite: function() {
     var done = this.async();
-    var prompts = [{
+    var prompts = [ {
+      name: 'generatorModuleNameWithDashes',
+      message: 'What is your module\'s dasherized name ? Will use this as the main module name:',
+      default : this.answers['generatorModuleNameWithDashes'],
+      desc: 'Main exported class from entry file.'
+    }, {
+      name: 'generatorModuleClass',
+      message: 'What is your module\'s main exported class ?',
+      default : this.answers['generatorModuleClass'],
+      desc: 'Main exported class from entry file.'
+    }, {
+      name: 'generatorModuleDescription',
+      message: 'What is your module\'s description ?',
+      default : this.determineAppname(),
+      desc: 'Description of your module.'
+    }, {
+      name: 'generatorUserEmail',
+      message: 'What is your email ?',
+      default : this.user.git.email(),
+      desc: 'Your email, does into package.json'
+    }, {
+      name: 'generatorUserName',
+      message: 'What is your name ?',
+      default : this.user.git.name(),
+      desc: 'Your name, does into package.json'
+    }, {
+      name: 'generatorUserGithubName',
+      message: 'What is your github username ?',
+      default : this.user.git.email().split('@')[0],
+      desc: 'Your github account name, does into package.json'
+    }, {
       name: 'generatorModuleWebsite',
       message: 'What is your module\'s own website ?',
       default : 'http://www.' +
         this.answers['generatorModuleNameWithDashes'] +
         '.com',
-      desc: 'Your github account name, does into package.json'
+      desc: 'The website for your module, does into package.json'
     }];
     this.prompt(prompts, function (answers) {
       var propNames = Object.getOwnPropertyNames(answers);
@@ -77,6 +87,9 @@ exports = module.exports = generators.Base.extend({
       }
       done();
     }.bind(this));
+  },
+  fixUsername: function() {
+    this.answers['generatorUserName'] = us.titleize(this.answers['generatorUserName']);
   },
   tellUserOurTemplate: function(){
     this.log('We will use the values below for templating:');
@@ -112,9 +125,10 @@ exports = module.exports = generators.Base.extend({
       bower: false,
       npm: true,
       callback: function () {
-        console.log(chalk.yellow('\nEverything is ready! For more information, refer to HOW_TO_GUIDE.md.'));
+        console.log(chalk.yellow('\nEverything is ready!'));
         console.log(chalk.yellow('You can type "grunt", and run your unittests, get coverage reports, ' +
                                  'get browserified and minimized versions of your module/library.'));
+        console.log(chalk.cyan('\nFor more information, refer to HOW_TO_GUIDE.md.'));
         console.log(chalk.green('\nEnjoy the ride, and have fun coding!'));
       }
     });

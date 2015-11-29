@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "Generator for a generic node module with unittests and coverage reports",
   "files": [
-    "app",
-    "router"
+    "app"
   ],
   "keywords": ["yeoman-generator"],
   "dependencies": {
