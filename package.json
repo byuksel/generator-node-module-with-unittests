@@ -1,0 +1,28 @@
+{
+  "name": "generator-node-module-with-unittests",
+  "version": "0.0.1",
+  "description": "Generator for a generic node module with unittests and coverage reports",
+  "files": [
+    "app",
+    "router"
+  ],
+  "keywords": ["yeoman-generator"],
+  "dependencies": {
+    "chalk": "*",
+    "underscore.string": "*",
+    "yeoman-generator": "^0.20.2"
+  },
+  "license": "Apache-2.0",
+  "author": "Baris Yuksel (http://barisyuksel.com)",
+  "contributors": [
+    "Baris Yuksel (http://barisyuksel.com)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/byuksel/generator-node-module-with-unittests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/byuksel/generator-node-module-with-unittests/issues"
+  },
+  "main": "app/index.js"
+}
