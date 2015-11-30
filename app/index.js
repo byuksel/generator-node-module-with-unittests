@@ -103,7 +103,7 @@ exports = module.exports = generators.Base.extend({
   copyFiles: function(){
     this._copyToDest('._gitignore', '.gitignore');
     this._copyToDest('_Gruntfile.js', 'Gruntfile.js');
-    this._copyToDest('_HOW_TO_GUIDE.md', 'HOW_TO_GUIDE.md');
+    this._copyToDestWithTemplate('_HOW_TO_GUIDE.md', 'HOW_TO_GUIDE.md', this.answers);
     this._copyToDestWithTemplate('_LICENCE.md', 'LICENCE.md', this.answers);
     this._copyToDest('_jsdoc.conf', 'jsdoc.conf');
     this._copyToDestWithTemplate('_package.json', 'package.json', this.answers);

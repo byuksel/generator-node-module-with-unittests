@@ -1,3 +1,5 @@
+# <%= generatorModuleName %>
+
 Write an awesome description for your new module here. You can edit this file and its contents for
 your final README.md file. This template will go through the "replace:dist" step of the Gruntfile
 which replaces 3 variables in this file (you can add more if you like).
