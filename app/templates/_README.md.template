@@ -39,3 +39,7 @@ var example = new <%= generatorModuleClass %>();
 
 example.hello();
 ```
+
+# License
+
+[Apache 2.0 License](LICENSE.md) - &copy; 2015 <%= generatorUserName %>
