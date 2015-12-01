@@ -73,6 +73,13 @@ module.exports = function(grunt) {
     connect: {
       server: {}
     },
+    flow: {
+      all: {
+        options: {
+          style: 'color'
+        }
+      }
+    },
     jsdoc: {
       all: {
         src: [
@@ -205,16 +212,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-flow');
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-replace');
   // Aliases
-  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'browserify', 'replace:browserified_tests_file', 'connect', 'mocha_phantomjs']);
+  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect', 'mocha_phantomjs']);
   grunt.registerTask('dist', ['clean:dist', 'browserify', 'uglify']);
   grunt.registerTask('docs', ['clean:docs', 'replace:dist', 'markdown', 'jsdoc']);
-  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'mochaTest']);
+  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'flow', 'mochaTest']);
   grunt.registerTask('test', ['localtest', 'browsertest']);
   // Default task
   grunt.registerTask('default', ['test', 'dist']);

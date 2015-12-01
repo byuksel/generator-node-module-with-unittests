@@ -28,6 +28,7 @@ In this section, we describe what each file does in this template and how you ca
 Once everything is installed, you will see a project structure like below:
 
 ```
+├── .flowconfig                                       # Config file for flow static type checker.
 ├── Gruntfile.js                                      # File of magic. All grunt tasks are in here.
 ├── README.md                                         # This very file. Gets overwritten by Grunt.
 ├── README.md.copy                                    # Copy of this file. Does not get overwritten.
@@ -53,6 +54,11 @@ Once everything is installed, you will see a project structure like below:
 │   │   └── dummy-test.js                             # Dummy js unittest. Provided as an example.
 │   │   └── <%= generatorModuleNameWithDashes %>-test.js                             # Unittest for your entry file.
 ```
+
+#### ./.flowconfig ####
+
+Configuration file for flow type checker. Flow is a static type checker which is helpful in catching null dereferences and unintentional type conversions.
+You can read more about it on [their website](http://http://flowtype.org).
 
 #### ./Gruntfile.js ####
 
@@ -134,6 +140,10 @@ Browserifies the library so that your library can run in a browser.
 
 Starts a basic web server.
 
+#### flow ####
+
+Runs Flow static type checker.
+
 #### jsdoc ####
 
 Creates documentation from src files using jsdoc.
@@ -176,7 +186,7 @@ Gruntfile.js comes with a whole set of custom tasks.
 
 #### browsertest ####
 
-Runs 'clean:tests', 'jshint', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs' respectively.
+Runs 'clean:tests', 'jshint', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs' respectively.
 
 #### dist ####
 
@@ -188,7 +198,7 @@ Runs 'clean:docs', 'replace:dist', 'markdown', 'jsdoc' respectively.
 
 #### localtest ####
 
-Runs 'clean:tests', 'jshint', 'mochaTest' respectively.
+Runs 'clean:tests', 'jshint', 'flow', 'mochaTest' respectively.
 
 #### test ####
 

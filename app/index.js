@@ -101,6 +101,7 @@ exports = module.exports = generators.Base.extend({
     this._makeDestDir('test/unittests');
   },
   copyFiles: function(){
+    this._copyToDest('._flowconfig', '.flowconfig');
     this._copyToDest('._gitignore', '.gitignore');
     this._copyToDest('_Gruntfile.js', 'Gruntfile.js');
     this._copyToDestWithTemplate('_HOW_TO_GUIDE.md', 'HOW_TO_GUIDE.md', this.answers);
