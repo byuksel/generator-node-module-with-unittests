@@ -28,6 +28,7 @@ In this section, we describe what each file does in this template and how you ca
 Once everything is installed, you will see a project structure like below:
 
 ```
+├── .editorconfig                                     # EditorConfig file for unifying settings across multiple editors.
 ├── .flowconfig                                       # Config file for flow static type checker.
 ├── .jscsrc                                           # Config file for jscs coding style checker.
 ├── .travis.yml                                       # Config file for travis-ci continous integration testing infrastructure.
@@ -56,11 +57,14 @@ Once everything is installed, you will see a project structure like below:
 │   │   └── dummy-test.js                             # Dummy js unittest. Provided as an example.
 │   │   └── <%= generatorModuleNameWithDashes %>-test.js                             # Unittest for your entry file.
 ```
+#### ./.editorconfig
+
+From their website, "EditorConfig is a file format and collection of text editor plugins for maintaining consistent coding styles between different editors and IDEs." This file has a bunch of settings that various editors can read and adjust their behaviour accordingly. You can read more about it on [their website](http://editorconfig.org)
 
 #### ./.flowconfig ####
 
 Configuration file for flow type checker. Flow is a static type checker which is helpful in catching null dereferences and unintentional type conversions.
-You can read more about it on [their website](http://http://flowtype.org).
+You can read more about it on [their website](http://flowtype.org).
 
 #### ./.jscsrc ####
 
