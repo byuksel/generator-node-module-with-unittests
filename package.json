@@ -1,11 +1,11 @@
 {
   "name": "generator-node-module-with-unittests",
-  "version": "0.2.0",
-  "description": "Yeoman generator for a generic node module with unittests and coverage reports. It uses Mocha, Browserify, Uglify, Blanket, PhantomJS and Watch.",
+  "version": "0.2.1",
+  "description": "Yeoman generator for a generic node module with unittests and coverage reports. It uses Mocha, Browserify, Uglify, Blanket, PhantomJS, JSHint, JSCS, Flow, Travis-CI and Watch.",
   "files": [
     "app"
   ],
-  "keywords": ["yeoman-generator", "browserify", "mocha", "phantomJS"],
+  "keywords": ["yeoman-generator", "browserify", "mocha", "phantomJS", "uglify", "jscs", "jshint"],
   "dependencies": {
     "chalk": "*",
     "underscore.string": "*",

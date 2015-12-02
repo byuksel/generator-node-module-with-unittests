@@ -103,6 +103,8 @@ exports = module.exports = generators.Base.extend({
   copyFiles: function(){
     this._copyToDest('._flowconfig', '.flowconfig');
     this._copyToDest('._gitignore', '.gitignore');
+    this._copyToDest('._jscsrc', '.jscsrc');
+    this._copyToDest('._travis.yml', '.travis.yml');
     this._copyToDest('_Gruntfile.js', 'Gruntfile.js');
     this._copyToDestWithTemplate('_HOW_TO_GUIDE.md', 'HOW_TO_GUIDE.md', this.answers);
     this._copyToDestWithTemplate('_LICENCE.md', 'LICENCE.md', this.answers);

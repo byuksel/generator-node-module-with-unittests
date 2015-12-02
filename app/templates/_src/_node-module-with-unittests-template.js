@@ -13,7 +13,8 @@ exports = module.exports = <%= generatorModuleClass %>;
 var Dummy = require('./dummy.js');
 
 /**
- * Constructs a new empty class
+ * Constructs a new empty <%= generatorModuleClass %> object.
+ *
  * @constructor
  */
 function <%= generatorModuleClass %>() {
@@ -21,8 +22,9 @@ function <%= generatorModuleClass %>() {
 }
 
 /**
- * Simple function
- * @returns {String} returns what sayHello() returns from Dummy.js.
+ * Simple function.
+ *
+ * @returns {string} returns what sayHello() returns from Dummy.js.
  */
 <%= generatorModuleClass %>.prototype.hello = function() {
   return this.dummyClass.sayhello();

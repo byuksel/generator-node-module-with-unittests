@@ -10,8 +10,9 @@ var <%= generatorModuleClass %> = require('../../src/<%= generatorModuleNameWith
 
 var chai = require('chai'),
     sinon = require('sinon'),
-    sinonChai = require('sinon-chai'),
-    expect = chai.expect;
+    sinonChai = require('sinon-chai');
+
+var expect = chai.expect;
 
 chai.use(sinonChai);
 chai.config.includeStack = true;

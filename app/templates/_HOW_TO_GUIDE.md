@@ -29,6 +29,8 @@ Once everything is installed, you will see a project structure like below:
 
 ```
 ├── .flowconfig                                       # Config file for flow static type checker.
+├── .jscsrc                                           # Config file for jscs coding style checker.
+├── .travis.yml                                       # Config file for travis-ci continous integration testing infrastructure.
 ├── Gruntfile.js                                      # File of magic. All grunt tasks are in here.
 ├── README.md                                         # This very file. Gets overwritten by Grunt.
 ├── README.md.copy                                    # Copy of this file. Does not get overwritten.
@@ -59,6 +61,16 @@ Once everything is installed, you will see a project structure like below:
 
 Configuration file for flow type checker. Flow is a static type checker which is helpful in catching null dereferences and unintentional type conversions.
 You can read more about it on [their website](http://http://flowtype.org).
+
+#### ./.jscsrc ####
+
+Configuration file for JSCS coding style checks. We use a modified version of Google JS coding style and full JSDoc3 checks.
+
+#### ./.travis.yml ####
+
+Wikipedia says "Travis CI is a FOSS, hosted, distributed continuous integration service used to build and test projects hosted at GitHub". I strongly recommend that you connect your node module to Travis-CI through Github to run continuous builds and integration tests.
+
+The generator puts two links to your README.md.template file, one linking an image to a *hypothetical* Travis-CI build task under your own github name. The generator does NOT create this build task. You can sign up with [Travis-CI](http://travis-ci.org) to get this working. You can read more on [their website](http://travis-ci.org).
 
 #### ./Gruntfile.js ####
 
@@ -144,6 +156,10 @@ Starts a basic web server.
 
 Runs Flow static type checker.
 
+#### jscs ####
+
+Runs the code through jscs for coding style checks. This uses a modified version of Google coding style.
+
 #### jsdoc ####
 
 Creates documentation from src files using jsdoc.
@@ -186,7 +202,7 @@ Gruntfile.js comes with a whole set of custom tasks.
 
 #### browsertest ####
 
-Runs 'clean:tests', 'jshint', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs' respectively.
+Runs 'clean:tests', 'jshint', 'jscs', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect:server', 'mocha_phantomjs' respectively.
 
 #### dist ####
 
@@ -198,7 +214,7 @@ Runs 'clean:docs', 'replace:dist', 'markdown', 'jsdoc' respectively.
 
 #### localtest ####
 
-Runs 'clean:tests', 'jshint', 'flow', 'mochaTest' respectively.
+Runs 'clean:tests', 'jshint', 'jscs','flow', 'mochaTest' respectively.
 
 #### test ####
 

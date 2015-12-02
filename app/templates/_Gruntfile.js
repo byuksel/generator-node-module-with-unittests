@@ -80,6 +80,17 @@ module.exports = function(grunt) {
         }
       }
     },
+    jscs: {
+      src : [
+        path.join('<%= projectparams.src_dir %>', '/**/*.js'),
+        path.join('<%= projectparams.unittests_dir %>', '/**/*.js')
+      ],
+      options: {
+        config: ".jscsrc",
+        verbose: true, // If you need output with rule names http://jscs.info/overview.html#verbose
+        fix: true // Autofix code style violations when possible.
+      }
+    },
     jsdoc: {
       all: {
         src: [
@@ -213,16 +224,17 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-flow');
+  grunt.loadNpmTasks("grunt-jscs");
   grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-replace');
   // Aliases
-  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect', 'mocha_phantomjs']);
+  grunt.registerTask('browsertest', ['clean:tests', 'jshint', 'jscs', 'flow', 'browserify', 'replace:browserified_tests_file', 'connect', 'mocha_phantomjs']);
   grunt.registerTask('dist', ['clean:dist', 'browserify', 'uglify']);
   grunt.registerTask('docs', ['clean:docs', 'replace:dist', 'markdown', 'jsdoc']);
-  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'flow', 'mochaTest']);
+  grunt.registerTask('localtest', ['clean:tests', 'jshint', 'jscs', 'flow', 'mochaTest']);
   grunt.registerTask('test', ['localtest', 'browsertest']);
   // Default task
   grunt.registerTask('default', ['test', 'dist']);

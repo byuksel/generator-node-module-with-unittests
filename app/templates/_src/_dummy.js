@@ -9,14 +9,16 @@
 exports = module.exports = Dummy;
 
 /**
- * Constructs a new Dummy class
+ * Constructs a new Dummy object.
+ *
  * @constructor
  */
 function Dummy() {}
 
 /**
  * Say hello!
- * @return {String} - Hello!
+ *
+ * @return {string} - Hello!
  */
 Dummy.prototype.sayhello = function() {
   return 'Hello!';
