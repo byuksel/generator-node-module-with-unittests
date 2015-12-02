@@ -1,6 +1,6 @@
 # <%= generatorModuleName %>
 
-[![Build Status](https://travis-ci.org/<%= generatorUserGithubName%>/<%= generatorModuleNameWithDashes %>.svg?branch=master)](https://travis-ci.org//<%= generatorUserGithubName%>/<%= generatorModuleNameWithDashes %>)[![npm version](https://badge.fury.io/js/<%= generatorModuleNameWithDashes %>.svg)](https://badge.fury.io/js/<%= generatorModuleNameWithDashes %>)
+[![Build Status](https://travis-ci.org/<%= generatorUserGithubName%>/<%= generatorModuleNameWithDashes %>.svg?branch=master)](https://travis-ci.org/<%= generatorUserGithubName%>/<%= generatorModuleNameWithDashes %>)[![npm version](https://badge.fury.io/js/<%= generatorModuleNameWithDashes %>.svg)](https://badge.fury.io/js/<%= generatorModuleNameWithDashes %>)
 
 Write an awesome description for your new module here. You can edit this file and its contents for
 your final README.md file. This template will go through the "replace:dist" step of the Gruntfile
