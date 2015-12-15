@@ -1,14 +1,14 @@
 <img align="right" height="300" src="https://raw.githubusercontent.com/byuksel/generator-node-module-with-unittests/master/logo.png">
 
-# Node-Module-With-Unittests generator
+# Node Module With Unittests Generator
 
 > Yeoman generator for a generic node module with unittests - lets you quickly set up a project with unittests, coverage reports, browserified and minimized versions of the module.
 
 ## Quick Installation
 
-Install `yo`, `grunt-cli`, `bower` and `generator-node-module-with-unittests`:
+Install `yo` and `generator-node-module-with-unittests`:
 ```
-npm install -g grunt-cli yo bower generator-node-module-with-unittests
+npm install -g yo generator-node-module-with-unittests
 ```
 
 ## Usage
@@ -47,7 +47,6 @@ yo node-module-with-unittests
 
 # In-depth Explanation #
 
-
 This repository provides scaffolding to promptly bootstrap writing your own node module with unittests.
 The unittests are run both within node environment and on the browser (which can help you determine
 if your code works as expected on different browsers). The unittests get full coverage reports.
@@ -55,11 +54,17 @@ if your code works as expected on different browsers). The unittests get full co
 You also get a fully automated document creation from source code, automatic updating of your final
 module/library name and version in README.md, and an html version of your README.md file.
 
-## Quick Start ##
+## Quick Start
 
-Replace ./src/dummy.js with your own module code and ./test/unittests/ with your own unittest. Type
-`grunt` and you will get tests running both under node environment and browsers, your documentation,
+Type:
+```
+grunt
+```
+This should build your project into dist/ directory. You can type ```grunt watch``` and this will continously build y\
+our sources into dist/ directory. You will also get tests running both under node environment and browsers, your documentation,
 and your full fledged README.md and README.md.html files.
+
+Replace ./src/dummy.js with your own module code and ./test/unittests/ with your own unittest. 
 
 ## README.md ##
 
