@@ -1,5 +1,7 @@
 # Node-Module-With-Unittests generator
 
+<img align="right" height="300" src="https://raw.githubusercontent.com/byuksel/generator-node-module-with-unittests/master/logo.png">
+
 > Yeoman generator for a generic node module with unittests - lets you quickly set up a project with unittests, coverage reports, browserified and minimized versions of the module.
 
 ## Quick Installation
